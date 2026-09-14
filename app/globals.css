@@ -1,25 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7f5;
-  --foreground: #111111;
+  /*
+   * HJ BRAND SYSTEM
+   * Same brand family as the existing Hlestakov James identity,
+   * expressed through a lighter editorial interface.
+   */
+
+  --brand-navy: #102a43;
+  --brand-navy-hover: #0b2033;
+
+  --brand-cyan: #1597c9;
+  --brand-cyan-hover: #0f7fa9;
+  --brand-cyan-soft: #e8f6fb;
+
+  --brand-violet: #6757d9;
+  --brand-violet-soft: #f0eefc;
+
+  --brand-gold: #e6a23c;
+  --brand-gold-soft: #fff5e3;
+
+  --background: #f7fafc;
+  --foreground: #102a43;
 
   --surface: #ffffff;
-  --surface-muted: #eeeeeb;
+  --surface-muted: #eef4f7;
 
-  --text-primary: #111111;
-  --text-secondary: #5f625f;
-  --text-muted: #858985;
+  --brand-text-secondary: #526577;
+  --brand-text-muted: #7b8b99;
 
-  --border: #dedfdb;
-  --border-strong: #c9cbc6;
+  --brand-border: #d9e3ea;
+  --brand-border-strong: #c1d0da;
 
-  --accent: #1f6f8b;
-  --accent-hover: #185a71;
-  --accent-soft: #e3f0f4;
-
-  --dark: #111514;
-  --dark-soft: #1a1e1c;
+  --dark: #102a43;
+  --dark-soft: #183c5a;
 
   --max-width: 1440px;
   --content-width: 1240px;
@@ -65,8 +79,8 @@ button {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--brand-cyan);
+  color: white;
 }
 
 .container-site {
@@ -123,17 +137,38 @@ button {
   bottom: -7px;
   left: 0;
   height: 1px;
-  background: currentColor;
+  background: var(--brand-cyan);
   content: "";
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 220ms ease;
 }
 
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  color: var(--brand-navy);
+}
+
 .nav-link:hover::after,
 .nav-link[aria-current="page"]::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.brand-gradient {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(21, 151, 201, 0.18), transparent 32%),
+    radial-gradient(circle at 80% 30%, rgba(103, 87, 217, 0.14), transparent 30%),
+    radial-gradient(circle at 60% 90%, rgba(230, 162, 60, 0.1), transparent 28%);
+}
+
+.brand-rule {
+  background: linear-gradient(
+    90deg,
+    var(--brand-cyan),
+    var(--brand-violet),
+    var(--brand-gold)
+  );
 }
 
 @media (max-width: 767px) {

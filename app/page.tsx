@@ -73,9 +73,11 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
                 <Link
                   href="/work"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--brand-navy)] bg-[var(--brand-navy)] px-6 text-sm font-medium text-white shadow-[0_8px_24px_rgba(16,42,67,0.16)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand-navy-hover)] hover:shadow-[0_10px_28px_rgba(16,42,67,0.22)]"
+                  className="relative z-10 inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--brand-navy)] bg-[var(--brand-navy)] px-6 text-sm font-medium text-white shadow-[0_8px_24px_rgba(16,42,67,0.16)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand-navy-hover)] hover:shadow-[0_10px_28px_rgba(16,42,67,0.22)]"
                 >
-                  Explore My Work
+                  <span className="relative z-10 text-white">
+                    Explore My Work
+                  </span>
                 </Link>
 
                 <Link

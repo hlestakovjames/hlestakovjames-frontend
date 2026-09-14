@@ -58,10 +58,10 @@ export default function Home() {
       <SiteNavigation />
 
       <main>
-        <section className="border-b border-[var(--border)]">
+        <section className="brand-gradient border-b border-[var(--brand-border)]">
           <div className="container-wide flex min-h-[calc(100vh-120px)] flex-col justify-between py-16 md:py-20 lg:py-24">
             <div className="max-w-5xl">
-              <p className="eyebrow text-[var(--text-secondary)]">
+              <p className="eyebrow text-[var(--brand-text-secondary)]">
                 Founder · Technology Leader · Digital Product Builder
               </p>
 
@@ -73,21 +73,21 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
                 <Link
                   href="/work"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--dark)] px-6 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--brand-navy)] bg-[var(--brand-navy)] px-6 text-sm font-medium text-white shadow-[0_8px_24px_rgba(16,42,67,0.16)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand-navy-hover)] hover:shadow-[0_10px_28px_rgba(16,42,67,0.22)]"
                 >
                   Explore My Work
                 </Link>
 
                 <Link
                   href="/contact/work-with-me"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--border-strong)] px-6 text-sm font-medium transition-colors hover:border-[var(--foreground)]"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--brand-border-strong)] px-6 text-sm font-medium transition-colors hover:border-[var(--brand-cyan)]"
                 >
                   Let&apos;s Talk
                 </Link>
               </div>
             </div>
 
-            <div className="mt-20 flex flex-col justify-between gap-6 border-t border-[var(--border)] pt-6 text-xs text-[var(--text-muted)] sm:flex-row">
+            <div className="mt-20 flex flex-col justify-between gap-6 border-t border-[var(--brand-border)] pt-6 text-xs text-[var(--brand-text-muted)] sm:flex-row">
               <span>
                 Based in Kenya · Working across technology &amp; organizations
               </span>
@@ -100,11 +100,13 @@ export default function Home() {
           <div className="container-site">
             <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
               <div>
-                <p className="eyebrow text-[var(--text-muted)]">Introduction</p>
+                <p className="eyebrow text-[var(--brand-text-muted)]">
+                  Introduction
+                </p>
               </div>
 
               <div>
-                <p className="body-large max-w-3xl text-[var(--text-secondary)]">
+                <p className="body-large max-w-3xl text-[var(--brand-text-secondary)]">
                   My work sits at the intersection of technology, leadership
                   and digital product building. I&apos;m interested in turning
                   ambitious ideas into useful systems, growing organizations
@@ -115,7 +117,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-[var(--border)] bg-[var(--surface)]">
+        <section className="border-y border-[var(--brand-border)] bg-[var(--surface)]">
           <div className="container-site py-16 md:py-20">
             <div className="grid md:grid-cols-3">
               {pillars.map((pillar, index) => (
@@ -124,9 +126,9 @@ export default function Home() {
                   href={pillar.href}
                   className={`group p-6 md:p-8 ${
                     index > 0 ? "border-t md:border-l md:border-t-0" : ""
-                  } border-[var(--border)]`}
+                  } border-[var(--brand-border)]`}
                 >
-                  <span className="text-xs text-[var(--text-muted)]">
+                  <span className="text-xs text-[var(--brand-text-muted)]">
                     {pillar.number}
                   </span>
 
@@ -134,7 +136,7 @@ export default function Home() {
                     {pillar.title}
                   </h2>
 
-                  <p className="mt-5 max-w-sm text-sm leading-7 text-[var(--text-secondary)]">
+                  <p className="mt-5 max-w-sm text-sm leading-7 text-[var(--brand-text-secondary)]">
                     {pillar.description}
                   </p>
 
@@ -151,7 +153,9 @@ export default function Home() {
           <div className="container-site">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
-                <p className="eyebrow text-[var(--text-muted)]">Selected Work</p>
+                <p className="eyebrow text-[var(--brand-text-muted)]">
+                  Selected Work
+                </p>
                 <h2 className="section-heading mt-5 max-w-3xl">
                   Organizations, products and systems I&apos;m building.
                 </h2>
@@ -174,7 +178,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group bg-[var(--background)] p-7 transition-colors hover:bg-[var(--surface-muted)] md:p-8"
                 >
-                  <p className="text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                  <p className="text-xs uppercase tracking-[0.1em] text-[var(--brand-text-muted)]">
                     {project.type}
                   </p>
 
@@ -182,7 +186,7 @@ export default function Home() {
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
+                  <p className="mt-4 text-sm leading-7 text-[var(--brand-text-secondary)]">
                     {project.description}
                   </p>
 
@@ -195,7 +199,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[var(--dark)] py-20 text-white md:py-28">
+        <section className="bg-[var(--brand-navy)] py-20 text-white md:py-28">
           <div className="container-site">
             <p className="eyebrow text-white/45">Next</p>
 

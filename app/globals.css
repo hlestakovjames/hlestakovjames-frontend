@@ -1,8 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f5;
+  --foreground: #111111;
+
+  --surface: #ffffff;
+  --surface-muted: #eeeeeb;
+
+  --text-primary: #111111;
+  --text-secondary: #5f625f;
+  --text-muted: #858985;
+
+  --border: #dedfdb;
+  --border-strong: #c9cbc6;
+
+  --accent: #1f6f8b;
+  --accent-hover: #185a71;
+  --accent-soft: #e3f0f4;
+
+  --dark: #111514;
+  --dark-soft: #1a1e1c;
+
+  --max-width: 1440px;
+  --content-width: 1240px;
 }
 
 @theme inline {
@@ -12,15 +32,121 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.container-site {
+  width: min(calc(100% - 40px), var(--content-width));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: 96px;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.display-heading {
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+}
+
+.section-heading {
+  font-size: clamp(2.25rem, 5vw, 4.75rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.body-large {
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.nav-link {
+  position: relative;
+  transition:
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 767px) {
+  .container-site,
+  .container-wide {
+    width: min(calc(100% - 32px), var(--content-width));
+  }
+
+  .section-padding {
+    padding-block: 72px;
+  }
+
+  .display-heading {
+    letter-spacing: -0.045em;
+  }
 }

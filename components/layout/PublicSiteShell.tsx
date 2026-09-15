@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Footer from "./Footer";
-import SiteNavigation from "./SiteNavigation";
+import SiteNavigation from "@/components/navigation/SiteNavigation";
 import UtilityHeader from "./UtilityHeader";
 
 type PublicSiteShellProps = {

@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="container-wide py-16 md:py-20">
         <div className="grid gap-12 border-b border-white/15 pb-14 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <HJMark href="/" size="lg" showName />
+            <div className="flex items-center gap-4"><HJMark href="/" size="lg" /><span className="text-xs font-bold tracking-[0.16em] text-white">HLESTAKOV JAMES</span></div>
             <p className="mt-8 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.04em] md:text-5xl">
               Building useful technology. Developing ideas. Creating room for what comes next.
             </p>
